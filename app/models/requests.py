@@ -1,14 +1,13 @@
 from typing import Optional
-from pydantic import BaseModel, Field
-
-
+from pydantic import BaseModel, ConfigDict
 class ChatRequest(BaseModel):
-    message: str = Field(
-        ...,
-        example="¿Quién es Eduardo?"
-    )
+    message: str
+    conversation_id: Optional[str] = None
 
-    conversation_id: Optional[str] = Field(
-        default=None,
-        example=None
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "message": "¿Quién es Eduardo?"
+            }
+        }
     )

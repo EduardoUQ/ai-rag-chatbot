@@ -9,4 +9,4 @@ app.include_router(router)
 
 @app.get("/")
 def home():
-    return {"message": "¡Mi API funciona!"}
+    return {"message": "¡Visita la ruta de chat!"}
