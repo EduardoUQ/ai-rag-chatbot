@@ -10,6 +10,5 @@ class ChatRequest(BaseModel):
 
     conversation_id: Optional[str] = Field(
         default=None,
-        description="Conversation identifier. Leave empty to start a new conversation.",
         example=None
     )
