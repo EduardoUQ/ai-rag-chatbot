@@ -5,10 +5,11 @@ from pydantic import BaseModel, Field
 class ChatRequest(BaseModel):
     message: str = Field(
         ...,
-        example="Pregunta del usuario"
+        example="¿Quién es Eduardo?"
     )
 
     conversation_id: Optional[str] = Field(
         default=None,
-        example="Identificador de la conversación. Déjalo vacío para iniciar una nueva."
+        description="Conversation identifier. Leave empty to start a new conversation.",
+        example=None
     )
